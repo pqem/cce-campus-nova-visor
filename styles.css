@@ -1,0 +1,557 @@
+:root{--nova-dorado:#D19C46;--nova-negro:#272729;--nova-metal:#626C7A;--nova-arena:#E0CCB3;--nova-niebla:#7EB1AC}
+
+#nova-variants{--gold:var(--nova-dorado);--ink:var(--nova-negro);--paper:#FFFFFF;font:14px/1.45 'DM Sans',Arial,sans-serif;color:var(--ink);width:100%;container-type:inline-size}
+#nova-variants *{box-sizing:border-box}
+#nova-variants [hidden]{display:none!important}
+#nova-variants .nv-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+#nova-variants button,#nova-variants select{font:inherit;padding:10px 13px;min-height:44px;border:1px solid rgba(98,108,122,.45);background:var(--paper);color:var(--ink);border-radius:5px;cursor:pointer}
+#nova-variants select{max-width:100%;font-size:16px}
+#nova-variants button:disabled{opacity:.4;cursor:default}
+#nova-variants .nv-download{display:inline-flex;align-items:center;padding:10px 13px;min-height:44px;border:1px solid var(--nova-dorado);border-radius:5px;background:var(--nova-dorado);color:var(--nova-negro);font-weight:700;text-decoration:none}
+#nova-variants button[aria-pressed=true]{background:var(--ink);color:#FFFFFF}
+#nova-variants .nv-status{display:block;font-size:12px;margin:0 0 14px;color:var(--nova-metal);background:var(--paper);padding:5px 8px;width:fit-content}
+#nova-variants .nv-scene{position:relative;width:100%;perspective:2200px;overflow:hidden;min-height:240px}
+#nova-variants .nv-book{position:absolute;top:0;left:0;width:840px;height:594px;transform-origin:0 0;transform-style:preserve-3d}
+#nova-variants .nv-stationary,#nova-variants .nv-leaf,#nova-variants .nv-back{position:absolute;top:0;left:420px;width:420px;height:594px;transform-style:preserve-3d}
+#nova-variants .nv-leaf{transform-origin:left center;z-index:3}
+#nova-variants .nv-surface{position:absolute;inset:0;background:var(--paper);backface-visibility:hidden;border:1px solid rgba(98,108,122,.3);box-shadow:3px 3px 0 rgba(224,204,179,.6),5px 6px 10px rgba(39,39,41,.1)}
+#nova-variants .nv-inside-left{transform:rotateY(180deg)}
+#nova-variants .nv-surface:after{content:'';position:absolute;top:0;bottom:0;left:0;width:15px;background:linear-gradient(90deg,rgba(39,39,41,.08),transparent);pointer-events:none}
+#nova-variants .nv-inside-left:after{left:auto;right:0;background:linear-gradient(270deg,rgba(39,39,41,.1),transparent)}
+#nova-variants .nv-edge{position:absolute;right:0;top:18%;height:64%;width:54px;border:0!important;border-radius:0!important;background:transparent!important;touch-action:none;cursor:grab;z-index:5;color:transparent!important}
+#nova-variants .nv-edge:after{content:'';position:absolute;right:8px;top:45%;width:4px;height:36px;border-radius:3px;background:rgba(209,156,70,.55)}
+#nova-variants .nv-inside-left .nv-edge{left:0;right:auto}
+#nova-variants .nv-inside-left .nv-edge:after{left:8px;right:auto}
+#nova-variants .nv-page{padding:25px 30px;display:flex;flex-direction:column;width:100%;min-height:100%;font:12px/1.42 'DM Sans',Arial,sans-serif;color:var(--ink);background:var(--paper)}
+#nova-variants .nv-surface>.nv-page{width:111.111111%;min-height:660px;transform:scale(.9);transform-origin:top left}
+#nova-variants .nv-page p{margin:0 0 10px}
+#nova-variants .nv-page h2,#nova-variants .nv-page h3{font-family:Aleo,Georgia,serif;font-weight:400;line-height:1.06;margin:0 0 16px;letter-spacing:-.4px;color:var(--ink)}
+#nova-variants .nv-page h2{font-size:30px}
+#nova-variants .nv-page h3{font-size:22px}
+#nova-variants .nova-eyebrow{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink);margin-bottom:12px!important;font-weight:700}
+#nova-variants .nova-lead{font-size:14px;line-height:1.55;max-width:38ch}
+#nova-variants .nova-traits{list-style:none;margin:0 0 12px;padding:12px 0 0;border-top:1px solid rgba(224,204,179,.7);display:grid;gap:8px}
+#nova-variants .nova-traits li{padding-left:14px;border-left:2px solid var(--nova-dorado);font-size:12px;line-height:1.4}
+#nova-variants .nova-muted{color:var(--nova-metal);font-size:11px}
+#nova-variants figure{margin:0 0 12px}
+#nova-variants figure img{display:block;width:100%;height:130px;object-fit:cover}
+#nova-variants figcaption{font-size:9px;line-height:1.25;color:var(--nova-metal);margin-top:5px}
+#nova-variants .nova-footer{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;gap:10px;font-size:9px;color:var(--nova-metal)}
+#nova-variants .nova-block{border-top:1px solid rgba(224,204,179,.7);padding:12px 0}
+#nova-variants .nova-block p:last-child{margin-bottom:0}
+#nova-variants .nova-subtitle{text-transform:uppercase;letter-spacing:1px;font-size:10px;color:var(--ink);margin-bottom:5px!important;font-weight:700}
+#nova-variants .nova-contact{margin-top:12px;border-top:3px solid var(--gold);padding-top:12px;font-size:11px;overflow-wrap:anywhere;display:grid;grid-template-columns:minmax(0,1fr) 96px;align-items:center;gap:14px}
+#nova-variants .nova-contact .contact-text{min-width:0}
+#nova-variants .nova-contact p{margin-bottom:5px}
+#nova-variants .nova-contact a{color:inherit;text-decoration:none}
+#nova-variants .nova-orientation{padding:14px 0;border-top:1px solid rgba(224,204,179,.7)}
+#nova-variants .nova-orientation h3{margin-bottom:0}
+#nova-variants .nv-label-icon{display:inline-block;width:15px;height:15px;vertical-align:middle;margin-right:7px;color:var(--nova-dorado)}
+#nova-variants .qr-whatsapp{margin:0;flex:none;width:96px}
+#nova-variants .qr-whatsapp img{display:block;width:96px!important;height:96px!important;border-radius:0!important;background:#FFFFFF;border:1px solid rgba(98,108,122,.3);padding:4px}
+#nova-variants .qr-whatsapp figcaption{margin-top:3px;font-size:9px;line-height:1.25;color:var(--ink)}
+#nova-variants[data-design=institutional] .nv-page{border-top:4px solid var(--gold);padding-top:24px}
+#nova-variants[data-design=institutional] figure img{height:160px}
+#nova-variants[data-design=institutional] .nova-eyebrow{text-align:center}
+#nova-variants[data-design=institutional] .nova-orientation h3{font-size:24px}
+#nova-variants[data-design=institutional] .nv-label-icon{width:16px;height:16px}
+#nova-variants[data-design=institutional] .nova-trajectory{font-size:12px;color:rgba(39,39,41,.75);margin-top:18px}
+#nova-variants[data-design=institutional] .back-page .back-band img{border-radius:50% 50% 0 0/18% 18% 0 0}
+#nova-variants[data-design=curves] .nv-page{padding-top:27px}
+#nova-variants[data-design=curves] figure{margin-top:18px}
+#nova-variants[data-design=curves] figure img{border-radius:0 42px 0 0;height:165px}
+#nova-variants[data-design=curves] .nova-traits{background:rgba(224,204,179,.4);border-radius:0 18px 0 0;border-top:0;padding:12px}
+#nova-variants[data-design=curves] .nova-contact{border-radius:0 20px 0 0;background:rgba(224,204,179,.4);padding:10px;border-top:0}
+#nova-variants[data-design=curves] .contact-text{font-size:11.5px;overflow-wrap:normal;word-break:normal}
+#nova-variants[data-design=curves] .back-page .back-band img{border-radius:0 20px 0 0}
+#nova-variants[data-design=curves] .nova-orientation{margin-left:12px;border-top:1px solid var(--gold);padding-top:10px}
+#nova-variants[data-design=curves] .nova-orientation h3{font-size:22px;line-height:1.08}
+#nova-variants[data-design=curves] .nova-block{margin-left:12px;margin-right:0}
+#nova-variants[data-design=curves] .nova-trajectory{margin-top:20px;padding-top:8px;position:relative}
+#nova-variants[data-design=curves] .nova-trajectory::before{content:'';display:block;width:36px;height:1px;background:var(--nova-dorado);position:absolute;top:0;left:0}
+#nova-variants[data-design=editorial] .nova-eyebrow,
+#nova-variants[data-design=editorial] .nova-subtitle{letter-spacing:2px}
+#nova-variants[data-design=editorial] figure img{height:165px;object-position:center 44%}
+#nova-variants[data-design=editorial] .nova-traits{gap:7px}
+#nova-variants[data-design=editorial] .nova-traits li{padding-left:12px;line-height:1.35}
+#nova-variants[data-design=editorial] .nova-orientation{border-top:2px solid var(--gold);padding:10px 0 0;margin-bottom:10px}
+#nova-variants[data-design=editorial] .nova-orientation:nth-of-type(2){border-top-width:1px}
+#nova-variants[data-design=editorial] .nova-block{padding:10px 0}
+#nova-variants[data-design=editorial] .nova-orientation h3{font-size:24px}
+#nova-variants[data-design=editorial] .nova-orientation:nth-of-type(2) h3{max-width:17ch;font-size:23px;line-height:1.08}
+#nova-variants[data-design=editorial] .nova-trajectory{margin-top:18px;font-size:12px}
+#nova-variants .nv-reading{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}
+#nova-variants .nv-reading .nv-page{border:1px solid rgba(98,108,122,.3);min-height:620px;font-size:14px;height:auto}
+#nova-variants .nv-reading .nova-muted,#nova-variants .nv-reading .nova-contact{font-size:13px}
+#nova-variants .nv-reading figcaption,#nova-variants .nv-reading .nova-footer{font-size:11px}
+#nova-variants .nv-reading .nova-eyebrow,#nova-variants .nv-reading .nova-subtitle{font-size:11px}
+#nova-variants .nv-reading>.local-cover{max-width:580px;margin:auto}
+@media(prefers-reduced-motion:reduce){#nova-variants .nv-book,#nova-variants .nv-leaf{transition:none!important}}
+
+/* Front covers (face 1): one <article> per design inside #local-covers, selected by
+   data-panel via the COVER_MAP in app.js. Shared card shell, then one block per design. */
+.local-cover{color:var(--nova-negro);font-family:'DM Sans',Arial,sans-serif;max-width:680px;margin:auto;width:100%;container-type:inline-size}
+.local-cover *{box-sizing:border-box}
+.local-cover .cover{position:relative;aspect-ratio:148/210;background:#FFFFFF;overflow:hidden;isolation:isolate;width:100%;height:auto}
+.local-cover .photo{position:absolute;object-fit:cover;display:block}
+.local-cover .logo{position:absolute;object-fit:contain;display:block}
+.local-cover h2,.local-cover p{margin:0;font-family:Aleo,Georgia,serif}
+.local-cover .kicker,.local-cover .enroll,.local-cover .place,.local-cover .identity,.local-cover .caption{font-family:'DM Sans',Arial,sans-serif}
+.local-cover .caption{position:absolute;bottom:1.6%;left:6%;right:6%;font-size:11px;line-height:1.25;color:var(--nova-metal);z-index:6}
+@container(max-width:400px){.local-cover .caption{font-size:9px}}
+
+/* 01 · Contrapunto (editorial) — dramatic full-bleed photo, headline over a dark
+   scrim, brand block along the bottom third. */
+.local-cover .poster .photo{inset:0;width:100%;height:76%;object-position:49% center}
+.local-cover .poster .shade{position:absolute;inset:0 0 24%;background:rgba(39,39,41,.48)}
+.local-cover .poster .poster-head{position:absolute;color:#FFFFFF;font:400 8cqw/1.08 Aleo,Georgia,serif;letter-spacing:-.01em;left:6%;right:5%;top:6%}
+.local-cover .poster .poster-head em{font-style:italic;color:var(--nova-arena)}
+.local-cover .poster .brand-zone{position:absolute;left:0;right:0;top:76%;bottom:0;border-top:6px solid var(--nova-dorado);background:var(--nova-arena)}
+.local-cover .poster .logo{left:6%;top:79%;width:18%;height:15%}
+.local-cover .poster .identity{position:absolute;left:28%;top:81%;font:700 9px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--nova-negro)}
+.local-cover .poster .enroll{position:absolute;left:28%;right:5%;top:87.5%;font:500 3cqw/1.25 'DM Sans',Arial,sans-serif;color:var(--nova-negro)}
+.local-cover .poster .place{position:absolute;left:28%;right:5%;top:93%;font:400 2.6cqw/1.25 'DM Sans',Arial,sans-serif;color:var(--nova-metal)}
+@container(max-width:400px){.local-cover .poster .identity{font-size:9px}.local-cover .poster .enroll,.local-cover .poster .place{font-size:10px}}
+
+/* 02 · Umbral (curves) — a curved gold-edged sand panel over the community photo.
+   The panel is the region: logo, institution, motto (upper box) and enrollment (lower box)
+   are flow children sharing ONE left edge (padding-left), so nothing is positioned by hand.
+   The left padding is sized so the lowest line clears the bottom-left curve by > 3 mm. */
+.local-cover .architecture .photo{inset:0;width:100%;height:100%;object-position:9% 50%}
+.local-cover .architecture .field{position:absolute;right:0;top:0;width:62%;height:75%;display:flex;flex-direction:column;justify-content:space-between;padding:8cqw 6cqw 13cqw 15cqw;background:var(--nova-arena);border-radius:0 0 0 40%/0 0 0 30%;border-left:5px solid var(--nova-dorado);border-bottom:5px solid var(--nova-dorado)}
+.local-cover .architecture .box{display:flex;flex-direction:column;align-items:flex-start}
+.local-cover .architecture .logo{position:static;width:27cqw;height:auto}
+.local-cover .architecture .kicker{margin:3cqw 0 0;font:700 2.15cqw/1.4 'DM Sans',Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--nova-negro);text-wrap:balance}
+.local-cover .architecture h2{margin:9cqw 0 0;font:400 6cqw/1.12 Aleo,Georgia,serif;letter-spacing:-.01em;color:var(--nova-negro);text-wrap:balance}
+.local-cover .architecture h2 em{font-style:italic;display:block}
+.local-cover .architecture h2::after{content:'';display:block;width:14cqw;height:3px;background:var(--nova-dorado);margin-top:5cqw}
+.local-cover .architecture .enroll{margin:0;font:700 2.4cqw/1.45 'DM Sans',Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--nova-negro)}
+.local-cover .architecture .place{margin:1.2cqw 0 0;font:400 2.5cqw/1.4 'DM Sans',Arial,sans-serif;color:var(--nova-negro)}
+.local-cover .architecture .caption{left:0;right:auto;bottom:0;max-width:66%;padding:2.2cqw 4cqw 6.4cqw 6.5cqw;background:var(--nova-arena);color:var(--nova-negro);font:400 8.5px/1.3 'DM Sans',Arial,sans-serif;border-radius:0 3.5cqw 0 0;text-wrap:balance}
+
+/* 03 · Encuentro (institutional) — arched photo above a centered stack. The vertical
+   lockup is used because the space under the arch is a centered column; a horizontal logo
+   inside a disc left empty caps and read as a sticker. Logo and institution name stay
+   together as one identity group, then motto, then enrollment at the foot. */
+.local-cover .medallion .photo{left:10%;top:0;width:80%;height:50%;object-position:50% 42%;border-radius:0 0 50% 50%;border:5px solid var(--nova-dorado);border-top:0}
+.local-cover .medallion .stack{position:absolute;left:6%;right:6%;top:52.5%;bottom:3%;padding-bottom:3cqw;display:flex;flex-direction:column;align-items:center;text-align:center}
+.local-cover .medallion .logo{position:static;width:27cqw;height:auto}
+.local-cover .medallion .kicker{margin:2.6cqw 0 0;font:700 2.7cqw/1.2 'DM Sans',Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--nova-negro)}
+.local-cover .medallion h2{margin:4cqw 0 0;font:400 5.8cqw/1.12 Aleo,Georgia,serif;letter-spacing:-.01em;color:var(--nova-negro);text-wrap:balance}
+.local-cover .medallion h2 em{display:block;font-style:italic}
+.local-cover .medallion .enroll{margin:auto 0 0;align-self:stretch;border-top:1px solid rgba(209,156,70,.5);padding-top:2.2cqw;font:500 2.4cqw/1.3 'DM Sans',Arial,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--nova-negro)}
+.local-cover .medallion .caption{position:static;margin:1.6cqw 0 0;font-size:8.5px;line-height:1.3;color:var(--nova-metal)}
+@container(max-width:400px){.local-cover .medallion .kicker{font-size:10px}.local-cover .medallion .enroll{font-size:9px}}
+
+/* 04 · Envolvente (immersive) — the facade fills the whole cover, text on a scrim. */
+.local-cover .facade-full .photo{inset:0;width:100%;height:100%;object-fit:cover;object-position:44% center}
+.local-cover .facade-full .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(39,39,41,.35) 0%,rgba(39,39,41,0) 28%,rgba(39,39,41,0) 38%,rgba(39,39,41,.7) 72%,rgba(39,39,41,.94) 100%)}
+.local-cover .facade-full .logo{position:absolute;left:8%;top:6%;height:11%;width:auto}
+.local-cover .facade-full .cover-text{position:absolute;left:8%;right:8%;bottom:5%;color:#FFFFFF}
+.local-cover .facade-full .kicker{margin:0 0 6%;font:700 2.6cqw/1.3 'DM Sans',Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.local-cover .facade-full h2{margin:0;font:400 6.5cqw/1.2 Aleo,Georgia,serif;letter-spacing:-.01em}
+.local-cover .facade-full h2 em{font-style:italic;color:var(--nova-dorado)}
+.local-cover .facade-full .enroll{margin:6% 0 0;font:2.8cqw/1.3 'DM Sans',Arial,sans-serif}
+.local-cover .facade-full .place{margin:1% 0 0;font:2.4cqw/1.3 'DM Sans',Arial,sans-serif;color:var(--nova-arena)}
+@container(max-width:400px){.local-cover .facade-full .kicker{font-size:10px}.local-cover .facade-full .enroll,.local-cover .facade-full .place{font-size:11px}}
+
+/* 06 · Una escuela, en concreto (facts) — editorial cover, white/arena + gold rule. */
+.local-cover .facts{background:#FFFFFF}
+/* Logo and institution name form one identity block: the name sits right under the logo. */
+.local-cover .facts .logo{position:absolute;left:8%;top:6%;width:32%;height:auto}
+.local-cover .facts .kicker{position:absolute;left:8%;right:8%;top:15.5%;margin:0;font:700 2.3cqw/1.3 'DM Sans',Arial,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--nova-negro)}
+.local-cover .facts h2{position:absolute;left:8%;right:10%;top:27%;margin:0;font:400 5.6cqw/1.15 Aleo,Georgia,serif;color:var(--nova-negro)}
+.local-cover .facts .year{position:absolute;left:8%;top:49%;margin:0;font:700 11cqw/1 Aleo,Georgia,serif;color:var(--nova-negro);border-bottom:5px solid var(--nova-dorado)}
+.local-cover .facts .enroll{position:absolute;left:8%;right:8%;top:59%;margin:0;font:500 2.2cqw/1.3 'DM Sans',Arial,sans-serif;color:var(--nova-metal)}
+.local-cover .facts .place{position:absolute;left:8%;right:8%;top:63.5%;margin:0;font:400 2cqw/1.3 'DM Sans',Arial,sans-serif;color:var(--nova-metal)}
+.local-cover .facts .photo-band{position:absolute;left:0;right:0;bottom:0;top:68%;margin:0!important;overflow:hidden}
+.local-cover .facts .photo-band img{position:absolute;top:0;left:0;width:100%!important;height:100%!important;object-fit:cover;object-position:50% 58%}
+@container(max-width:400px){.local-cover .facts .kicker{font-size:10px}.local-cover .facts .enroll{font-size:10px}}
+
+/* 07 · Constelación NOVA — carbon field, gold star + niebla node network. */
+.local-cover .constellation{background:var(--nova-negro)}
+.local-cover .constellation .c-sky{position:absolute;inset:0;width:100%;height:100%}
+.local-cover .constellation .c-line{stroke-width:.32;fill:none}
+.local-cover .constellation .c-line-gold{stroke:var(--nova-dorado)}
+.local-cover .constellation .c-line-niebla{stroke:var(--nova-niebla)}
+.local-cover .constellation .c-dot{fill:#FFFFFF}
+.local-cover .constellation .c-dot-alt{fill:var(--nova-niebla)}
+.local-cover .constellation .c-star polygon{fill:var(--nova-dorado)}
+.local-cover .constellation .logo{position:absolute;left:8%;top:6%;width:13%;height:auto}
+.local-cover .constellation .c-motto{position:absolute;left:8%;right:10%;bottom:22%;margin:0;font:400 7.6cqw/1.14 Aleo,Georgia,serif;color:#FFFFFF;letter-spacing:-.01em}
+.local-cover .constellation .enroll{position:absolute;left:8%;right:8%;bottom:12.5%;margin:0;font:500 2.6cqw/1.3 'DM Sans',Arial,sans-serif;color:rgba(255,255,255,.85)}
+.local-cover .constellation .place{position:absolute;left:8%;right:8%;bottom:8%;margin:0;font:400 2.4cqw/1.3 'DM Sans',Arial,sans-serif;color:var(--nova-arena)}
+@container(max-width:400px){.local-cover .constellation .enroll,.local-cover .constellation .place{font-size:11px}}
+
+/* App shell (viewer chrome, not part of the printed piece) — same palette. */
+body{margin:0;padding:22px;background:var(--nova-negro);color:#FFFFFF;font-family:'DM Sans',Arial,sans-serif}
+#nova-variants{max-width:1000px;margin:0 auto}
+.app-heading{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:20px;font:13px 'DM Sans',Arial,sans-serif;letter-spacing:.08em;color:#FFFFFF}
+.review-notes{max-width:1000px;margin:22px auto 0;font:12px/1.5 'DM Sans',Arial,sans-serif;color:var(--nova-arena)}
+.review-notes code{color:#FFFFFF}
+@media(max-width:500px){body{padding:12px}.app-heading{font-size:11px}.review-notes{font-size:11px}}
+
+/* Interior 2|3, immersive only: identity photo bleeds to the top/left/right edges. */
+#nova-variants[data-design=immersive] .nv-page:not(.back-page) figure{position:relative;margin:-25px -30px 14px;width:calc(100% + 60px)}
+#nova-variants[data-design=immersive] .nv-page:not(.back-page) figure img{width:100%;height:220px;object-fit:cover;object-position:center 38%}
+#nova-variants[data-design=immersive] .nv-page:not(.back-page) figure figcaption{position:absolute;left:0;right:0;bottom:0;margin:0;min-height:22px;padding:6px 12px;font-size:9.5px;line-height:1.25;color:#FFFFFF;background:rgba(39,39,41,.8)}
+#nova-variants[data-design=immersive] .nova-lead{max-width:40ch}
+#nova-variants[data-design=immersive] .nova-orientation{margin-bottom:16px}
+#nova-variants[data-design=immersive] .nova-orientation h3{font-size:25px}
+#nova-variants[data-design=immersive] .nova-orientation:nth-of-type(2) h3{max-width:19ch}
+#nova-variants[data-design=immersive] .nova-block p:not(.nova-subtitle){font-size:13px}
+#nova-variants[data-design=immersive] .nova-trajectory{margin-top:24px;font-size:12px;line-height:1.4;position:relative;padding-top:8px}
+#nova-variants[data-design=immersive] .nova-trajectory::before{content:'';display:block;width:36px;height:1px;background:var(--nova-dorado);position:absolute;top:0;left:0}
+#nova-variants[data-design=immersive] .back-page .back-band img{object-position:65% 55%}
+
+/* Back cover (face 0/4), shared by all six designs: CTA, WhatsApp QR, contact, then
+   the facade as a full-bleed band with the legend on a scrim. */
+#nova-variants .back-page{padding:26px 30px;font-size:13px;line-height:1.4;display:flex;flex-direction:column}
+#nova-variants .back-page h2{font-size:28px;line-height:1.1;margin:0 0 10px;flex:none;font-family:Aleo,Georgia,serif}
+#nova-variants .back-page .closing{font:italic 15px/1.3 Aleo,Georgia,serif;color:var(--nova-metal);margin:0 0 14px;flex:none}
+#nova-variants .back-page .cta{font-size:18px;line-height:1.25;font-weight:700;margin:0 0 10px;color:var(--nova-dorado);font-family:'DM Sans',Arial,sans-serif;flex:none}
+#nova-variants .back-page .nova-contact{font-size:12.5px;margin-top:4px;padding-top:12px;flex:none}
+#nova-variants .back-page .nova-contact p{margin-bottom:6px}
+#nova-variants .back-page .sponsor{font-size:11px;margin:10px 0 0;flex:none}
+#nova-variants .back-page .back-band{flex:1;position:relative;margin:14px -30px -26px;width:calc(100% + 60px);min-height:120px}
+#nova-variants .back-page .back-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:48% 55%}
+#nova-variants .back-page .back-band-scrim{position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(0deg,rgba(39,39,41,.9) 25%,rgba(39,39,41,0))}
+
+/* Interior 2|3, design 06 "Una escuela, en concreto": three real horizontal bands
+   (arena/white/arena), each an equal flex:1 third of the fixed page height on both
+   pages, so the bands land at identical heights and read as one continuous spread. */
+#nova-variants[data-design=facts] .nv-page.f-spread{font-family:'DM Sans',Arial,sans-serif;font-size:14px;line-height:1.5;padding:0}
+#nova-variants[data-design=facts] .f-band{display:flex;flex-direction:column;justify-content:center;padding:18px 30px;min-height:0}
+#nova-variants[data-design=facts] .f-band-1,#nova-variants[data-design=facts] .f-band-2{flex:3}
+#nova-variants[data-design=facts] .f-band-3{flex:2}
+#nova-variants[data-design=facts] .f-band-1,#nova-variants[data-design=facts] .f-band-3{background:var(--nova-arena)}
+#nova-variants[data-design=facts] .f-band-2{background:#FFFFFF}
+#nova-variants[data-design=facts] .f-band .nova-eyebrow{font:700 11px/1.3 'DM Sans',Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--nova-negro);margin-bottom:12px!important}
+#nova-variants[data-design=facts] .f-band h3{font:400 23px/1.15 Aleo,Georgia,serif;margin:0;color:var(--nova-negro)}
+#nova-variants[data-design=facts] .f-band-1 h3{font:400 20px/1.12 Aleo,Georgia,serif;margin:0 0 4px;color:var(--nova-negro)}
+#nova-variants[data-design=facts] .f-lead{font:12px/1.4 'DM Sans',Arial,sans-serif;margin:0;color:var(--nova-negro)}
+#nova-variants[data-design=facts] .f-traits{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
+#nova-variants[data-design=facts] .f-traits li{font-size:11px;line-height:1.3;padding-left:12px;border-left:2px solid var(--nova-dorado);color:var(--nova-negro)}
+#nova-variants[data-design=facts] .f-english{font:12px/1.4 'DM Sans',Arial,sans-serif;margin:8px 0 0;color:var(--nova-negro)}
+#nova-variants[data-design=facts] .f-numbers{display:flex;gap:14px}
+#nova-variants[data-design=facts] .f-num{flex:1;min-width:0}
+#nova-variants[data-design=facts] .f-num .n{display:block;font:700 68px/1 Aleo,Georgia,serif;color:var(--nova-negro);border-bottom:4px solid var(--nova-dorado)}
+#nova-variants[data-design=facts] .f-num .n.n-compact{font-size:36px}
+#nova-variants[data-design=facts] .f-num .label{display:block;font:12px/1.3 'DM Sans',Arial,sans-serif;margin-top:8px;color:var(--nova-metal)}
+#nova-variants[data-design=facts] .f-year{font:700 58px/1 Aleo,Georgia,serif;color:var(--nova-negro);margin:0 0 8px;border-bottom:4px solid var(--nova-dorado);display:inline-block}
+#nova-variants[data-design=facts] .f-continuity{font:20px/1.35 Aleo,Georgia,serif;margin:0;color:var(--nova-negro)}
+
+/* Interior 2|3, design 07 "Constelación NOVA": the cover's network expands into
+   both pages via matching svg line coordinates at the shared page-edge, so the
+   network visually continues at the fold. Body copy reuses the same identity /
+   trajectory sentences as the other five designs' interior pages. */
+#nova-variants[data-design=constellation] .nv-page.k-spread{background:var(--nova-negro);color:#FFFFFF;font-family:'DM Sans',Arial,sans-serif;font-size:14px;line-height:1.5;position:relative;overflow:hidden}
+#nova-variants[data-design=constellation] .k-spread .nova-eyebrow{color:#FFFFFF}
+#nova-variants[data-design=constellation] .k-field{flex:none;margin-bottom:16px}
+#nova-variants[data-design=constellation] .k-body{margin:0;max-width:34ch;color:#FFFFFF}
+#nova-variants[data-design=constellation] .k-nodes{position:relative;flex:1;min-height:130px}
+#nova-variants[data-design=constellation] .k-net{position:absolute;inset:0;width:100%;height:100%}
+#nova-variants[data-design=constellation] .k-line{stroke-width:.9;fill:none}
+#nova-variants[data-design=constellation] .k-line-gold{stroke:var(--nova-dorado)}
+#nova-variants[data-design=constellation] .k-line-niebla{stroke:var(--nova-niebla)}
+#nova-variants[data-design=constellation] .k-node{position:absolute;transform:translate(-50%,-5.5px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:7px}
+#nova-variants[data-design=constellation] .k-dot{width:11px;height:11px;border-radius:50%;background:var(--nova-dorado);box-shadow:0 0 0 4px rgba(209,156,70,.2);flex:none}
+#nova-variants[data-design=constellation] .k-dot-niebla{background:var(--nova-niebla);box-shadow:0 0 0 4px rgba(126,177,172,.2)}
+#nova-variants[data-design=constellation] .k-node-text{font:400 11px/1.25 'DM Sans',Arial,sans-serif;margin:0;color:#FFFFFF;max-width:135px;background:var(--nova-negro);padding:3px 8px}
+#nova-variants[data-design=constellation] .k-node-orient{flex-direction:column-reverse;transform:translate(-50%,calc(-100% + 5.5px))}
+#nova-variants[data-design=constellation] .k-node-orient h4{font:600 15px/1.25 'DM Sans',Arial,sans-serif;margin:0;color:rgba(255,255,255,.85);max-width:145px;background:var(--nova-negro);padding:3px 8px}
+#nova-variants[data-design=constellation] .k-node-side,#nova-variants[data-design=constellation] .k-node-side.k-node-orient{flex-direction:row;align-items:center;text-align:left;gap:10px;transform:translate(-5.5px,-50%)}
+#nova-variants[data-design=constellation] .k-node-side .k-node-text,#nova-variants[data-design=constellation] .k-node-side h4{max-width:230px;background:none;padding:0}
+#nova-variants[data-design=constellation] .k-strip{flex:none;display:flex;justify-content:space-between;align-items:center;gap:14px;margin:14px -30px -25px;width:calc(100% + 60px);min-height:54px;background:var(--nova-arena);color:var(--nova-negro);padding:14px 30px;font:600 11px/1.3 'DM Sans',Arial,sans-serif}
+#nova-variants[data-design=constellation] .k-strip span{text-align:left}
+#nova-variants[data-design=constellation] .back-page .nova-contact{border-top-color:var(--nova-negro)}
+#nova-variants[data-design=constellation] .back-page .back-band img{object-position:50% 45%}
+
+/* Batch 1: scoped to 01/04, shared by the viewer and print templates.
+   Interior typography is authored before the viewer's .9 scale. */
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .nova-eyebrow,
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .nova-subtitle{font-size:11.2px}
+#nova-variants:is([data-design=editorial],[data-design=immersive]) figcaption,
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .nova-footer{font-size:11.2px;line-height:1.3}
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .nova-footer{border-top:1px solid var(--nova-arena);padding-top:10px}
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .qr-whatsapp figcaption{font-size:11.2px;line-height:1.3}
+
+/* 01: a brighter human scene and a compact, legible brand signature. */
+.local-cover .poster .shade{background:linear-gradient(180deg,rgba(39,39,41,.72),rgba(39,39,41,.18) 43%,rgba(39,39,41,.08))}
+.local-cover .poster .poster-head{top:6%;left:7%;right:7%;font-size:7.6cqw;line-height:1.12}
+.local-cover .poster .poster-head em{display:block}
+.local-cover .poster .brand-zone{border-top-width:3px}
+.local-cover .poster .logo{left:7%;top:80%;width:23%;height:11%}
+.local-cover .poster .identity{left:36%;top:80.5%;font-size:2.6cqw;line-height:1.35}
+.local-cover .poster .enroll{left:36%;right:7%;top:87%;font-size:3cqw;line-height:1.35}
+.local-cover .poster .place{left:36%;right:7%;top:94%;font-size:2.6cqw}
+#nova-variants[data-design=editorial] .nova-lead{font-size:17px;line-height:1.5;max-width:none;margin-bottom:20px}
+#nova-variants[data-design=editorial] .nova-traits{gap:8px;padding-top:16px;margin-bottom:18px}
+#nova-variants[data-design=editorial] .nova-traits li{font-size:14px;line-height:1.4}
+#nova-variants[data-design=editorial] [data-page=identidad] figure{margin-top:auto;margin-bottom:20px}
+#nova-variants[data-design=editorial] [data-page=identidad] figure img{height:165px;object-position:center 48%}
+#nova-variants[data-design=editorial] [data-page=identidad] .nova-footer{margin-top:0}
+#nova-variants[data-design=editorial] .nova-orientation{padding:18px 0 20px;margin-bottom:0}
+#nova-variants[data-design=editorial] .nova-orientation h3,
+#nova-variants[data-design=editorial] .nova-orientation:nth-of-type(2) h3{font-size:32px;line-height:1.08;max-width:19ch}
+#nova-variants[data-design=editorial] .nova-block{padding:18px 0;font-size:14px;line-height:1.5}
+#nova-variants[data-design=editorial] .nova-trajectory{font:italic 17px/1.4 Aleo,Georgia,serif;color:var(--nova-metal);border-left:3px solid var(--nova-dorado);padding-left:14px;margin-top:22px;max-width:32ch}
+
+/* 04: protect the building silhouette; join the inside photo and academic field
+   on a 260px horizontal datum without carrying text across the fold. */
+.local-cover .facade-full .photo{height:82%;object-position:44% 62%}
+.local-cover .facade-full .scrim{background:linear-gradient(180deg,rgba(39,39,41,.3),rgba(39,39,41,0) 27%,rgba(39,39,41,0) 54%,rgba(39,39,41,.85) 75%,var(--nova-negro) 83%)}
+.local-cover .facade-full{background:var(--nova-negro)}
+.local-cover .facade-full .logo{height:13%;top:6%}
+.local-cover .facade-full .cover-text{bottom:6%;left:8%;right:8%}
+.local-cover .facade-full .kicker{margin-bottom:4%;font-size:2.6cqw}
+.local-cover .facade-full h2{font-size:6.7cqw;line-height:1.12}
+.local-cover .facade-full h2 em{display:block;color:var(--nova-arena)}
+.local-cover .facade-full .enroll{margin-top:5%;font-size:3cqw}
+.local-cover .facade-full .place{font-size:2.6cqw}
+#nova-variants[data-design=immersive] .nv-page[data-page=identidad] figure{margin-bottom:20px}
+#nova-variants[data-design=immersive] .nv-page[data-page=identidad] figure img{height:210px;object-position:center 42%}
+#nova-variants[data-design=immersive] .nv-page[data-page=identidad] figure figcaption{position:static;display:flex;align-items:center;height:50px;padding:8px 30px;background:var(--nova-arena);color:var(--nova-negro);font-size:11.2px;line-height:1.3}
+#nova-variants[data-design=immersive] .nova-lead{font-size:15px;line-height:1.5;max-width:none;margin-bottom:16px}
+#nova-variants[data-design=immersive] .nova-traits{gap:10px;padding-top:15px}
+#nova-variants[data-design=immersive] .nova-traits li{font-size:13.5px;line-height:1.4}
+#nova-variants[data-design=immersive] [data-page=propuesta]{background:linear-gradient(var(--nova-arena) 260px,#FFFFFF 260px)}
+#nova-variants[data-design=immersive] [data-page=propuesta]>.nova-eyebrow{height:20px;margin-bottom:0!important}
+#nova-variants[data-design=immersive] .nova-orientation{flex:none;min-height:90px;margin:0;padding:14px 0;border-top:1px solid rgba(39,39,41,.25)}
+#nova-variants[data-design=immersive] .nova-orientation:nth-of-type(2){min-height:125px}
+#nova-variants[data-design=immersive] .nova-orientation h3{font-size:30px;line-height:1.1}
+#nova-variants[data-design=immersive] .nova-orientation .nv-label-icon{color:var(--nova-negro)}
+#nova-variants[data-design=immersive] .nova-block{padding:20px 0}
+#nova-variants[data-design=immersive] .nova-orientation+.nova-block{border-top:0}
+#nova-variants[data-design=immersive] .nova-block p:not(.nova-subtitle){font-size:14px;line-height:1.5}
+#nova-variants[data-design=immersive] .nova-trajectory{font:italic 17px/1.4 Aleo,Georgia,serif;margin-top:18px;padding-top:14px}
+
+/* Response blocks: preserve the 96px white QR and full contact strings. */
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .back-page h2{font-size:35px;line-height:1.1;margin-bottom:16px}
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .back-page .closing{font-size:17px;line-height:1.4;max-width:32ch;margin-bottom:26px}
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .back-page .cta{font-size:21px;color:var(--nova-negro);margin-bottom:12px}
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .back-page .nova-contact{grid-template-columns:minmax(0,1fr) 96px;align-items:start;gap:12px;font-size:12px;padding-top:18px}
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .back-page .contact-text p{margin-bottom:10px}
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .back-page .contact-text a[href^="tel:"]{font-size:18px;font-weight:700;white-space:nowrap}
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .back-page .contact-text a[href^="mailto:"]{font-size:11.5px;overflow-wrap:normal;word-break:normal}
+#nova-variants:is([data-design=editorial],[data-design=immersive]) .back-page .sponsor{font-size:11.2px;line-height:1.4;margin-top:20px}
+#nova-variants[data-design=editorial] .back-page .back-band{margin-top:24px;min-height:170px}
+#nova-variants[data-design=editorial] .back-page .back-band img{object-position:48% 73%}
+#nova-variants[data-design=editorial] .back-page .back-band-scrim{display:none}
+#nova-variants[data-design=immersive] .back-page{background:var(--nova-negro);color:#FFFFFF}
+#nova-variants[data-design=immersive] .back-page h2{color:#FFFFFF}
+#nova-variants[data-design=immersive] .back-page .closing{color:var(--nova-arena)}
+#nova-variants[data-design=immersive] .back-page .cta{color:var(--nova-dorado);margin-top:28px}
+#nova-variants[data-design=immersive] .back-page .nova-contact{background:#FFFFFF;color:var(--nova-negro);padding:20px 16px;grid-template-columns:minmax(0,1fr) 96px}
+#nova-variants[data-design=immersive] .back-page .contact-text a[href^="mailto:"]{overflow-wrap:anywhere}
+#nova-variants[data-design=immersive] .back-page .sponsor{color:var(--nova-arena);margin-top:auto;padding-top:24px}
+#nova-variants[data-design=immersive] .back-page .back-band{display:none}
+@container(max-width:400px){
+ #nova-variants:is([data-design=editorial],[data-design=immersive]) .nv-reading .back-page .nova-contact{grid-template-columns:minmax(0,1fr);gap:18px}
+}
+
+/* Design 02 "Umbral", faces 0/2/3: regions in normal flow (one left edge each), the
+   page grid places regions and photos. Authored on the 466.667x660 canvas; spacing
+   scale 6 / 12 / 20 / 28. Sand bands run full-bleed edge to edge; text keeps the page
+   padding so every region shares the 30px edge. */
+#nova-variants[data-design=curves] .c-page{padding:28px 30px 24px;font:12.5px/1.45 'DM Sans',Arial,sans-serif}
+#nova-variants[data-design=curves] .c-region{display:flex;flex-direction:column;align-items:flex-start;width:100%}
+#nova-variants[data-design=curves] .c-page .nova-eyebrow{margin:0 0 12px!important;font-size:10.5px;letter-spacing:.14em}
+#nova-variants[data-design=curves] .c-page .c-kicker{margin:0 0 4px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--nova-negro)}
+#nova-variants[data-design=curves] .c-page .c-notice{margin:0;font-size:9.5px;line-height:1.3;color:var(--nova-metal);text-wrap:balance}
+#nova-variants[data-design=curves] .c-page .nova-footer{margin-top:auto;padding-top:10px;border-top:1px solid var(--nova-arena)}
+#nova-variants[data-design=curves] .c-photo{display:block;width:100%;height:100%;object-fit:cover;border-radius:0 30px 0 0}
+#nova-variants[data-design=curves] .c-band-sand{align-self:stretch;margin:0 -30px;padding:16px 30px;background:var(--nova-arena)}
+
+/* Face 2 · Quiénes somos */
+#nova-variants[data-design=curves] .c-lead{margin:0 0 16px;font-size:14.5px;line-height:1.5;max-width:41ch;text-wrap:pretty}
+#nova-variants[data-design=curves] .c-traits{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+#nova-variants[data-design=curves] .c-traits li{padding-left:12px;border-left:2px solid var(--nova-dorado);font-size:12.5px;line-height:1.4;text-wrap:pretty}
+#nova-variants[data-design=curves] .c-photos{flex:1;min-height:150px;margin:20px 0 10px;display:grid;grid-template-columns:.9fr 1.2fr;gap:10px}
+#nova-variants[data-design=curves] .c-photos .c-photo{min-height:0}
+#nova-variants[data-design=curves] .c-photos .c-photo:first-child{border-radius:0}
+#nova-variants[data-design=curves] .c-photo-mentor{object-position:30% 30%}
+#nova-variants[data-design=curves] .c-photo-class{object-position:42% 50%}
+
+/* Face 3 · Nuestra propuesta */
+#nova-variants[data-design=curves] .c-orient{display:grid;grid-template-columns:minmax(0,1fr) 43%;gap:16px;align-items:center;align-self:stretch;border-top:1px solid var(--nova-dorado);padding:14px 0 16px}
+#nova-variants[data-design=curves] .c-orient-text{align-self:center}
+#nova-variants[data-design=curves] .c-orient h3{margin:0;font-size:23px;line-height:1.1;text-wrap:balance}
+#nova-variants[data-design=curves] .c-orient .c-photo{height:130px}
+#nova-variants[data-design=curves] .c-photo-science{object-position:38% 60%}
+#nova-variants[data-design=curves] .c-photo-economy{object-position:48% 40%}
+#nova-variants[data-design=curves] .c-facts{margin-top:6px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+#nova-variants[data-design=curves] .c-facts p{margin:0;font-size:12.5px;line-height:1.4;text-wrap:pretty}
+#nova-variants[data-design=curves] .c-facts .c-kicker{margin-bottom:5px}
+#nova-variants[data-design=curves] .c-trajectory{position:relative;margin:26px 0 0;padding-top:12px;font:italic 17px/1.35 Aleo,Georgia,serif;color:var(--nova-negro);max-width:30ch;text-wrap:balance}
+#nova-variants[data-design=curves] .c-trajectory::before{content:'';position:absolute;top:0;left:0;width:36px;height:2px;background:var(--nova-dorado)}
+#nova-variants[data-design=curves] .c-proposal+.c-notice{margin-top:auto;padding-top:14px}
+#nova-variants[data-design=curves] .c-inside-left .c-notice,#nova-variants[data-design=curves] .c-proposal+.c-notice{margin-bottom:14px}
+
+/* Face 0 · contraportada */
+#nova-variants[data-design=curves] .c-back{padding-bottom:0}
+#nova-variants[data-design=curves] .c-back h2{margin:0 0 12px;font-size:34px;line-height:1.1;text-wrap:balance}
+#nova-variants[data-design=curves] .c-closing{margin:0 0 20px;font:italic 16px/1.35 Aleo,Georgia,serif;color:var(--nova-metal);max-width:32ch;text-wrap:balance}
+#nova-variants[data-design=curves] .c-cta{margin:0 0 12px;font:700 19px/1.25 'DM Sans',Arial,sans-serif;color:var(--nova-negro)}
+#nova-variants[data-design=curves] .c-back .nova-contact{align-self:stretch;margin:0;padding:14px 16px;grid-template-columns:minmax(0,1fr) 96px;align-items:center;gap:12px;border-radius:0 22px 0 0}
+#nova-variants[data-design=curves] .c-back .contact-text p{margin:0 0 7px;font-size:11.5px}
+#nova-variants[data-design=curves] .c-back .contact-text a[href^="tel:"]{font-size:15px;font-weight:700;white-space:nowrap}
+#nova-variants[data-design=curves] .c-back .sponsor{margin:12px 0 0;font-size:11px}
+#nova-variants[data-design=curves] .c-band{flex:1;min-height:150px;margin:20px -30px 0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr) auto;gap:0}
+#nova-variants[data-design=curves] .c-band .c-photo{border-radius:0;min-height:0}
+#nova-variants[data-design=curves] .c-photo-walk{object-position:16% 50%}
+#nova-variants[data-design=curves] .c-photo-facade{grid-column:2;grid-row:1/3;object-position:50% 60%}
+/* The notice sits under the generated photo only: the facade column runs to the bleed with no text (owner decision 2026-09-29). */
+#nova-variants[data-design=curves] .c-page .c-notice-bar{grid-column:1;grid-row:2;margin:0;padding:9px 14px 27px 30px;background:var(--nova-arena);color:var(--nova-negro)}
+
+
+/* ==========================================================================
+   Viewer chrome ("La procesión de pruebas") — index.html only.
+   Every selector hangs off #nova-variants.vw-app or body.vw, classes that
+   imprenta.html never carries, so nothing below can reach the printed faces.
+   ========================================================================== */
+body.vw{margin:0;padding:0;background:var(--nova-negro);color:var(--nova-arena)}
+#nova-variants.vw-app{--vw-focus:var(--nova-dorado);--vw-rule:rgba(224,204,179,.45);--vw-hair:rgba(224,204,179,.14);max-width:none;margin:0;min-height:100vh;display:grid;grid-template-columns:336px minmax(0,1fr);grid-template-rows:auto 1fr auto;grid-template-areas:"head main" "rail main" "foot foot";align-content:start;color:var(--nova-arena)}
+#nova-variants.vw-app .vw-header{grid-area:head;padding:32px 24px 0 32px}
+#nova-variants.vw-app .vw-manual{margin:0 0 12px;text-align:left;font:700 12px/1.2 'DM Sans',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--nova-arena);opacity:.7}
+#nova-variants.vw-app .vw-title{margin:0;max-width:14ch;font:400 clamp(28px,3.2vw,40px)/1.1 Aleo,Georgia,serif;color:var(--nova-arena);text-wrap:balance}
+#nova-variants.vw-app .vw-title::after{content:'';display:block;width:64px;height:3px;margin-top:16px;background:var(--nova-dorado)}
+#nova-variants.vw-app .vw-lede{margin:16px 0 0;font:400 16px/1.5 'DM Sans',Arial,sans-serif;color:var(--nova-arena);text-wrap:pretty}
+
+#nova-variants.vw-app .vw-rail{grid-area:rail;position:sticky;top:16px;align-self:start;padding:24px 24px 24px 32px}
+#nova-variants.vw-app .vw-rail ol{list-style:none;margin:0;padding:0}
+#nova-variants.vw-app .vw-rail li+li{border-top:1px solid var(--vw-hair)}
+#nova-variants.vw-app .vw-rail-finale{margin-top:12px;padding-top:0;border-top:0!important}
+#nova-variants.vw-app .vw-step{position:relative;display:flex;gap:12px;align-items:baseline;width:100%;min-height:44px;padding:10px 12px 10px 16px;border:0;border-radius:0;background:transparent;color:var(--nova-arena);opacity:.72;font:400 15px/1.3 'DM Sans',Arial,sans-serif;text-align:left;cursor:pointer}
+#nova-variants.vw-app .vw-rail-finale .vw-step{padding-left:50px;border:1px solid var(--vw-rule);opacity:.9}
+#nova-variants.vw-app .vw-rail-finale .vw-step[aria-current=true]{opacity:1}
+#nova-variants.vw-app .vw-step::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:3px;background:transparent}
+#nova-variants.vw-app .vw-step-n{flex:none;min-width:22px;font-weight:700;font-size:12px;letter-spacing:.12em}
+#nova-variants.vw-app .vw-step.is-visited{opacity:1}
+#nova-variants.vw-app .vw-step[aria-current=true]{opacity:1;font-weight:700}
+#nova-variants.vw-app .vw-step[aria-current=true]::before{background:var(--nova-dorado)}
+#nova-variants.vw-app .vw-step:hover{background:rgba(224,204,179,.1);opacity:1}
+
+#nova-variants.vw-app .vw-main{grid-area:main;min-width:0;padding:32px 32px 24px 24px}
+#nova-variants.vw-app .vw-viewport{position:relative}
+#nova-variants.vw-app .nv-surface{border-color:transparent;box-shadow:0 16px 20px -12px rgba(0,0,0,.6)}
+#nova-variants.vw-app .nv-scene{max-width:none}
+#nova-variants.vw-app .vw-marks{position:absolute;inset:0;pointer-events:none}
+#nova-variants.vw-app .vw-mark{position:absolute;top:0;left:0;width:0;height:0}
+#nova-variants.vw-app .vw-mark::before,#nova-variants.vw-app .vw-mark::after{content:'';position:absolute;background:rgba(224,204,179,.35)}
+#nova-variants.vw-app .vw-mark::before{width:12px;height:1px;top:0}
+#nova-variants.vw-app .vw-mark::after{width:1px;height:12px;left:0}
+#nova-variants.vw-app .vw-mark-tl::before{right:8px}
+#nova-variants.vw-app .vw-mark-tl::after{bottom:8px}
+#nova-variants.vw-app .vw-mark-tr::before{left:8px}
+#nova-variants.vw-app .vw-mark-tr::after{bottom:8px}
+#nova-variants.vw-app .vw-mark-bl::before{right:8px}
+#nova-variants.vw-app .vw-mark-bl::after{top:8px}
+#nova-variants.vw-app .vw-mark-br::before{left:8px}
+#nova-variants.vw-app .vw-mark-br::after{top:8px}
+
+#nova-variants.vw-app .vw-caption{max-width:960px;margin:8px auto 0;text-align:center}
+#nova-variants.vw-app .vw-namerow{display:flex;align-items:center;justify-content:center;gap:16px}
+#nova-variants.vw-app .vw-namebox{display:flex;align-items:center;gap:16px;min-width:0}
+#nova-variants.vw-app .vw-numeral{font:400 60px/1 Aleo,Georgia,serif;color:var(--nova-arena);opacity:.45}
+#nova-variants.vw-app .vw-name{margin:0;font:400 clamp(22px,2.2vw,28px)/1.15 Aleo,Georgia,serif;color:var(--nova-arena);text-align:left}
+#nova-variants.vw-app .vw-arrow{flex:none;width:44px;min-height:44px;padding:0;border:0;border-radius:0;background:transparent;color:var(--nova-arena);font:400 24px/1 'DM Sans',Arial,sans-serif;cursor:pointer}
+#nova-variants.vw-app .vw-arrow:hover{background:rgba(224,204,179,.12)}
+#nova-variants.vw-app .vw-arrow[aria-disabled=true]{visibility:hidden}
+#nova-variants.vw-app .vw-intent{margin:8px auto 0;max-width:62ch;font:400 16px/1.5 'DM Sans',Arial,sans-serif;color:var(--nova-arena);text-wrap:balance}
+#nova-variants.vw-app .vw-controls{margin-top:16px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 24px}
+#nova-variants.vw-app .vw-view{display:flex;gap:12px;align-items:center}
+#nova-variants.vw-app .vw-seg{display:flex;gap:2px;padding:3px;border:1px solid var(--vw-rule);border-radius:4px}
+#nova-variants.vw-app .vw-seg button{min-height:44px;padding:0 16px;border:0;border-radius:2px;background:transparent;color:var(--nova-arena);font:700 12px/1 'DM Sans',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+#nova-variants.vw-app .vw-seg button:hover{background:rgba(224,204,179,.12)}
+#nova-variants.vw-app .vw-seg button[aria-pressed=true]{background:var(--nova-arena);color:var(--nova-negro)}
+#nova-variants.vw-app .vw-text{min-height:44px;padding:0 8px;border:0;border-radius:0;background:transparent;color:var(--nova-arena);font:400 14px/1 'DM Sans',Arial,sans-serif;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+#nova-variants.vw-app .vw-text:hover{background:rgba(224,204,179,.12)}
+#nova-variants.vw-app .vw-text[aria-pressed=true]{background:rgba(224,204,179,.18);font-weight:700;text-decoration-thickness:2px}
+#nova-variants.vw-app .vw-download{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border:1px solid var(--nova-dorado);border-radius:4px;background:var(--nova-dorado);color:var(--nova-negro);font:700 12px/1 'DM Sans',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+#nova-variants.vw-app .vw-download:hover{filter:brightness(1.1)}
+#nova-variants.vw-app .vw-status{min-height:20px;margin:12px 0 0;font:400 13px/1.5 'DM Sans',Arial,sans-serif;color:var(--nova-arena);opacity:.85}
+#nova-variants.vw-app.is-finale :is(.vw-view,.vw-download,.vw-namerow,.vw-intent,.vw-tech){display:none}
+#nova-variants.vw-app.is-finale .vw-caption{margin-top:16px}
+
+#nova-variants.vw-app .vw-finale-head{max-width:956px;margin:0 auto 24px}
+#nova-variants.vw-app .vw-finale-title{margin:0;font:400 clamp(22px,2.2vw,28px)/1.15 Aleo,Georgia,serif;color:var(--nova-arena)}
+#nova-variants.vw-app .vw-finale-lede{margin:8px 0 0;font:400 16px/1.5 'DM Sans',Arial,sans-serif;color:var(--nova-arena)}
+#nova-variants.vw-app .vw-covers{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,300px));justify-content:center;gap:32px 28px}
+#nova-variants.vw-app .vw-cover{position:relative;min-width:0}
+#nova-variants.vw-app .vw-cover-frame{position:relative;aspect-ratio:420/594;overflow:hidden;background:var(--nova-negro);box-shadow:0 16px 20px -12px rgba(0,0,0,.6)}
+#nova-variants.vw-app .vw-cover-frame .local-cover{position:absolute;top:0;left:0;width:420px;max-width:none;margin:0;transform:scale(var(--vw-cover-scale,.6));transform-origin:0 0}
+#nova-variants.vw-app .vw-cover-open{display:flex;gap:10px;align-items:baseline;width:100%;min-height:44px;margin-top:8px;padding:8px 0 0;border:0;border-radius:0;background:transparent;color:var(--nova-arena);font:400 20px/1.2 Aleo,Georgia,serif;text-align:left;cursor:pointer}
+#nova-variants.vw-app .vw-cover-open::after{content:'';position:absolute;inset:0}
+#nova-variants.vw-app .vw-cover-n{flex:none;font:700 12px/1 'DM Sans',Arial,sans-serif;letter-spacing:.12em}
+#nova-variants.vw-app .vw-cover-intent{margin:0 0 4px;font:400 13px/1.45 'DM Sans',Arial,sans-serif;color:var(--nova-arena);opacity:.75;text-wrap:pretty}
+#nova-variants.vw-app .vw-cover:hover .vw-cover-frame{outline:2px solid var(--nova-arena);outline-offset:4px}
+
+#nova-variants.vw-app .vw-footer{grid-area:foot;padding:24px 32px 32px;border-top:1px solid rgba(224,204,179,.2)}
+#nova-variants.vw-app .vw-footer p{margin:0;max-width:78ch;font:400 13px/1.6 'DM Sans',Arial,sans-serif;color:var(--nova-arena);opacity:.85}
+
+#nova-variants.vw-app :is(.vw-step,.vw-arrow,.vw-text,.vw-seg button,.vw-download,.vw-cover-open):focus-visible{outline:2px solid var(--vw-focus);outline-offset:2px}
+#nova-variants.vw-app .vw-cover:has(.vw-cover-open:focus-visible) .vw-cover-frame{outline:2px solid var(--vw-focus);outline-offset:4px}
+#nova-variants.vw-app .vw-cover-open:focus-visible{outline:0}
+#nova-variants.vw-app .nv-edge:focus-visible{outline:2px solid var(--vw-focus);outline-offset:-2px;box-shadow:inset 0 0 0 4px var(--nova-negro)}
+
+@media(max-width:760px){
+ #nova-variants.vw-app{display:block}
+ #nova-variants.vw-app .vw-header{padding:12px 16px 0}
+ #nova-variants.vw-app .vw-manual{margin-bottom:6px}
+ #nova-variants.vw-app .vw-title{max-width:none;font-size:26px}
+ #nova-variants.vw-app .vw-title::after{margin-top:8px}
+ #nova-variants.vw-app .vw-lede{margin-top:8px;font-size:14px;line-height:1.45}
+ #nova-variants.vw-app .vw-rail{position:sticky;top:0;z-index:5;background:var(--nova-negro);padding:8px 0 0;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-bottom:1px solid var(--vw-hair)}
+ #nova-variants.vw-app .vw-rail::-webkit-scrollbar{display:none}
+ #nova-variants.vw-app .vw-rail ol{display:flex;gap:4px;padding:0 16px;width:max-content}
+ #nova-variants.vw-app .vw-rail li+li{border-top:0}
+ #nova-variants.vw-app .vw-rail-finale{margin:0 0 0 8px;padding:0;border-top:0!important}
+ #nova-variants.vw-app .vw-rail li{scroll-snap-align:center}
+ #nova-variants.vw-app .vw-step,#nova-variants.vw-app .vw-rail-finale .vw-step{width:auto;white-space:nowrap;padding:10px 12px}
+ #nova-variants.vw-app .vw-rail-finale .vw-step::before{left:12px;right:12px}
+ #nova-variants.vw-app .vw-step::before{left:12px;right:12px;top:auto;bottom:0;width:auto;height:3px}
+ #nova-variants.vw-app .vw-main{padding:0 16px 16px}
+ #nova-variants.vw-app .vw-caption{margin-top:0}
+ #nova-variants.vw-app .vw-namerow{gap:4px}
+ #nova-variants.vw-app .vw-namebox{gap:10px}
+ #nova-variants.vw-app .vw-numeral{font-size:40px}
+ #nova-variants.vw-app .vw-name{font-size:22px}
+ #nova-variants.vw-app .vw-intent{margin-top:4px;font-size:15px;line-height:1.4}
+ #nova-variants.vw-app .vw-controls{display:grid;grid-template-columns:1fr 1fr;gap:4px 8px;margin-top:8px}
+ #nova-variants.vw-app .vw-view{display:contents}
+ #nova-variants.vw-app .vw-seg{grid-column:1/-1}
+ #nova-variants.vw-app .vw-seg button{flex:1;padding:0 8px}
+ #nova-variants.vw-app .vw-download{grid-column:2;grid-row:2}
+ #nova-variants.vw-app .vw-text{grid-column:1;grid-row:2}
+ #nova-variants.vw-app .vw-share,#nova-variants.vw-app #nv-share{grid-column:1;grid-row:3}
+ #nova-variants.vw-app .vw-see-all{display:inline-block;grid-column:2;grid-row:3}
+ #nova-variants.vw-app .vw-readbar{top:53px}
+ #nova-variants.vw-app .vw-tech{font-size:12px}
+ #nova-variants.vw-app .vw-finale{padding-top:16px}
+ #nova-variants.vw-app .vw-covers{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+ #nova-variants.vw-app .vw-cover-open{font-size:17px;flex-wrap:wrap;gap:2px 8px}
+ #nova-variants.vw-app .vw-footer{padding:20px 16px 28px}
+}
+
+/* Viewer chrome, third pass: reading bar, skip link, share, fold cue. */
+#nova-variants.vw-app .vw-skip{position:absolute;left:8px;top:-60px;z-index:20;padding:12px 16px;background:var(--nova-arena);color:var(--nova-negro);font:700 12px/1 'DM Sans',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+#nova-variants.vw-app .vw-skip:focus-visible{top:8px;outline:2px solid var(--vw-focus);outline-offset:2px}
+#nova-variants.vw-app .vw-main:focus{outline:0}
+#nova-variants.vw-app .vw-tech{margin:4px auto 0;max-width:62ch;font:400 13px/1.45 'DM Sans',Arial,sans-serif;color:var(--nova-arena);opacity:.75}
+#nova-variants.vw-app .vw-cover-tech{margin:0 0 4px;font:400 12px/1.4 'DM Sans',Arial,sans-serif;color:var(--nova-arena);opacity:.6}
+#nova-variants.vw-app .vw-cover-intent{margin-bottom:2px}
+#nova-variants.vw-app .nv-edge{width:max(54px,var(--vw-edge-w,54px))}
+#nova-variants.vw-app .vw-readbar{position:sticky;top:0;z-index:4;display:flex;align-items:center;gap:16px;margin:0 0 16px;padding:4px 0;background:var(--nova-negro);border-bottom:1px solid var(--vw-hair)}
+#nova-variants.vw-app .vw-readbar-label{font:700 12px/1.2 'DM Sans',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--nova-arena);opacity:.85}
+#nova-variants.vw-app .vw-text.is-cue{background:rgba(224,204,179,.12);font-weight:700}
+#nova-variants.vw-app .vw-see-all{display:none}
+#nova-variants.vw-app.is-finale .vw-see-all{display:none}
+#nova-variants.vw-app .vw-share-field{display:block;width:min(100%,640px);margin:12px auto 0;min-height:44px;padding:0 12px;border:1px solid var(--vw-rule);border-radius:4px;background:transparent;color:var(--nova-arena);font:400 14px/1 'DM Sans',Arial,sans-serif}
+#nova-variants.vw-app .vw-share-field:focus-visible{outline:2px solid var(--vw-focus);outline-offset:2px}
+#nova-variants.vw-app :is(.vw-skip,.vw-share-field):focus-visible{outline-color:var(--vw-focus)}
+@media(max-width:760px){
+ #nova-variants.vw-app .vw-see-all{display:inline-block}
+ #nova-variants.vw-app .vw-readbar{top:53px}
+ #nova-variants.vw-app.is-finale .vw-see-all{display:none}
+}
